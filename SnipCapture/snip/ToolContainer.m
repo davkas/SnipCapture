@@ -25,13 +25,15 @@
  *  @return 图片路径
  */
 NSString* getImageBundlePath(NSString* filename) {
-    NSBundle *libBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle].privateFrameworksPath stringByAppendingPathComponent:@"SnipCapture.framework"]];
-    if (libBundle && filename) {
-        NSString *path = [libBundle pathForImageResource:filename];
-        //NSLog(@"%@", path);
-        return path;
-    }
-    return nil;
+//    NSBundle *libBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle].privateFrameworksPath stringByAppendingPathComponent:@"SnipCapture.framework"]];
+//    if (libBundle && filename) {
+//        NSString *path = [libBundle pathForImageResource:filename];
+//        //NSLog(@"%@", path);
+//        return path;
+//    }
+//    return nil;
+    NSString * path = [[NSBundle mainBundle] pathForResource:filename ofType:@"tiff"];
+    return path;
 }
 
 @implementation ToolContainer
